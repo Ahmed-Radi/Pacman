@@ -69,4 +69,19 @@ public class Model {
         initGame();
     }
     
+    private void initVariables() {
+        screenData = new short[N_BLOCKS * N_BLOCKS];
+        d = new Dimension(400, 400);
+        ghost_x = new int[MAX_GHOSTS];
+        ghost_dx = new int[MAX_GHOSTS];
+        ghost_y = new int[MAX_GHOSTS];
+        ghost_dy = new int[MAX_GHOSTS];
+        ghostSpeed = new int[MAX_GHOSTS];
+        dx = new int[4];
+        dy = new int[4];
+        
+        timer = new Timer(400, this); //The few time make the game faster
+        timer.start();
+    }
+    
 }
