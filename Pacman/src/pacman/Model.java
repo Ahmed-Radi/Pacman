@@ -84,4 +84,19 @@ public class Model {
         timer.start();
     }
     
+      private void playGame(Graphics2D g2d) {
+
+        if (dying) {
+
+            death();
+
+        } else {
+
+            movePacman();
+            drawPacman(g2d);
+            moveGhosts(g2d);
+            checkMaze();
+        }
+    }
+    
 }
