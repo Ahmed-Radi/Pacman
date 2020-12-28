@@ -187,5 +187,21 @@ private void drawGhost(Graphics2D g2d, int x, int y) {
         pacman_y = pacman_y + PACMAN_SPEED * pacmand_y;
     }
 
+    private void drawPacman(Graphics2D g2d) {
+
+        if (req_dx == -1) {
+        	g2d.drawImage(left, pacman_x + 1, pacman_y + 1, this);
+        } else if (req_dx == 1) {
+        	g2d.drawImage(right, pacman_x + 1, pacman_y + 1, this);
+        } else if (req_dy == -1) {
+        	g2d.drawImage(up, pacman_x + 1, pacman_y + 1, this);
+        } else {
+        	g2d.drawImage(down, pacman_x + 1, pacman_y + 1, this);
+        }
+    }
+
+    
+    
+    
     
 }
