@@ -145,6 +145,16 @@ public class Model {
             initLevel();
         }
     }
+	private void death() {
+
+    	lives--;
+
+        if (lives == 0) {
+            inGame = false;
+        }
+
+        continueLevel();
+    }
 
 private void drawGhost(Graphics2D g2d, int x, int y) {
     	g2d.drawImage(ghost, x, y, this);
