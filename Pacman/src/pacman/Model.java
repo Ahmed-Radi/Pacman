@@ -26,7 +26,16 @@ public class Model {
     private final int SCREEN_SIZE = N_BLOCKS * BLOCK_SIZE;
     private final int MAX_GHOSTS = 12;
     private final int PACMAN_SPEED = 6;
+    private int N_GHOSTS = 6;
+    private int lives, score;
+    private int[] dx, dy;
+    private int[] ghost_x, ghost_y, ghost_dx, ghost_dy, ghostSpeed;
 
+    private Image heart, ghost;
+    private Image up, down, left, right;
+
+    private int pacman_x, pacman_y, pacmand_x, pacmand_y;
+    private int req_dx, req_dy;
 
     /*
         0 = blue 
