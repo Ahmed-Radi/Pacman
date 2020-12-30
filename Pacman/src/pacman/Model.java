@@ -154,17 +154,17 @@ public class Model {
             initLevel();
         }
     }
-	private void death() {
+    private void death() {
 
-    	lives--;
+    lives--;
 
-        if (lives == 0) {
-            inGame = false;
-        }
-
-        continueLevel();
+    if (lives == 0) {
+        inGame = false;
     }
-	 private void moveGhosts(Graphics2D g2d) {
+
+    continueLevel();
+}
+    private void moveGhosts(Graphics2D g2d) {
 
         int pos;
         int count;
@@ -236,7 +236,7 @@ public class Model {
         }
     }
 
-private void drawGhost(Graphics2D g2d, int x, int y) {
+    private void drawGhost(Graphics2D g2d, int x, int y) {
     	g2d.drawImage(ghost, x, y, this);
     }
 
@@ -290,7 +290,14 @@ private void drawGhost(Graphics2D g2d, int x, int y) {
         }
     }
 
-    
+    private void initGame() {
+        
+    	lives = 3;
+        score = 0;
+        initLevel();
+        N_GHOSTS = 6;
+        currentSpeed = 3;
+    }
     
     
     
