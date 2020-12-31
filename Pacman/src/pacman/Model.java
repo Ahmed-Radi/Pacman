@@ -298,6 +298,16 @@ public class Model {
         N_GHOSTS = 6;
         currentSpeed = 3;
     }
+	private void initLevel() {
+
+        int i;
+        for (i = 0; i < N_BLOCKS * N_BLOCKS; i++) {
+            screenData[i] = levelData[i];
+        }
+
+        continueLevel();
+    }
+	
     
     
     
