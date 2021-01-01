@@ -308,7 +308,35 @@ public class Model {
         continueLevel();
     }
 	
-    
+    private void continueLevel() {
+
+        int dx = 1;
+        int random;
+
+        for (int i = 0; i < N_GHOSTS; i++) {
+
+            ghost_y[i] = 4 * BLOCK_SIZE; //start position
+            ghost_x[i] = 4 * BLOCK_SIZE;
+            ghost_dy[i] = 0;
+            ghost_dx[i] = dx;
+            dx = -dx;
+            random = (int) (Math.random() * (currentSpeed + 1));
+
+            if (random > currentSpeed) {
+                random = currentSpeed;
+            }
+
+            ghostSpeed[i] = validSpeeds[random];
+        }
+
+        pacman_x = 7 * BLOCK_SIZE;  //start position
+        pacman_y = 11 * BLOCK_SIZE;
+        pacmand_x = 0;	//reset direction move
+        pacmand_y = 0;
+        req_dx = 0;		// reset direction controls
+        req_dy = 0;
+        dying = false;
+    }
     
     
 }
