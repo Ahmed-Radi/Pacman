@@ -434,6 +434,10 @@ public class Model {
             }
         }
 }
+   @Override
+    public void actionPerformed(ActionEvent e) {
+        repaint();
+    }
     
     
 }
