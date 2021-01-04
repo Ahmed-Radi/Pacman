@@ -1,10 +1,6 @@
 
 package pacman;
 
-/**
- *
- * @author Ahmed
- */
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,7 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class Model {
+public class Model extends JPanel implements ActionListener{
     private Dimension d;
     private final Font smallFont = new Font("Arial", Font.BOLD, 14);
     private boolean inGame = false;
@@ -62,6 +58,19 @@ public class Model {
         17, 16, 16, 20, 0, 17, 16, 16, 16, 16, 16, 16, 16, 16, 20,
         25, 24, 24, 24, 26, 24, 24, 24, 24, 24, 24, 24, 24, 24, 28
     };
+    private final int validSpeeds[] = {1, 2, 3, 4, 6, 8};
+    private final int maxSpeed = 6;
+
+    private int currentSpeed = 3;
+    private short[] screenData;
+    private Timer timer;
+    public Model() {
+        loadImages();
+        initVariables();
+        addKeyListener(new TAdapter());
+        setFocusable(true);
+        initGame();
+    }
     private void loadImages() {
         down  = new ImageIcon("src\\images/down.gif").getImage();
         up    = new ImageIcon("src\\images/up.gif").getImage();
@@ -70,13 +79,7 @@ public class Model {
         ghost = new ImageIcon("src\\images/ghost.gif").getImage();
         heart = new ImageIcon("src\\images/heart.png").getImage();
     }
-    public Model() {
-        loadImages();
-        initVariables();
-        addKeyListener(new TAdapter());
-        setFocusable(true);
-        initGame();
-    }
+
     
     private void initVariables() {
         screenData = new short[N_BLOCKS * N_BLOCKS];
